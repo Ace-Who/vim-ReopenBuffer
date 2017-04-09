@@ -7,9 +7,10 @@ set cpoptions&vim
 augroup ReopenBuffer
   autocmd!
   autocmd BufWinLeave *
-  \ echo 'BufWinleave' |
+  \ unlockvar g:bufnameClosed g:bufnrClosed |
   \ let g:bufnameClosed = expand('<afile>') |
-  \ let g:bufnrClosed = expand('<abuf>')
+  \ let g:bufnrClosed = expand('<abuf>') |
+  \ lockvar g:bufnameClosed g:bufnrClosed
 augroup END
 
 command! ReopenBuffer
