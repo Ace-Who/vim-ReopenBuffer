@@ -4,6 +4,8 @@
 let s:save_cpoptions = &cpoptions
 set cpoptions&vim
 
+unlet! g:buffpClosed g:bufnrClosed
+
 augroup ReopenBuffer
   autocmd!
   autocmd BufWinLeave *
